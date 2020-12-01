@@ -21,7 +21,7 @@ resource "google_logging_project_sink" "sinks" {
   name    = "${lower(each.value)}-sink"
   project = local.project
 
-  filter      = each.value ? "logName=projects/${local.project}/logs/${lower(each.value)}-${local.env}" : var.filter
+  filter      = "logName=projects/${local.project}/logs/${lower(each.value)}-${local.env}"
   destination = "storage.googleapis.com/${local.env}-${local.region}-${lower(each.value)}"
 
   unique_writer_identity = var.unique_writer_identity
