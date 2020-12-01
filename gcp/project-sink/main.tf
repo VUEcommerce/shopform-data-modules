@@ -22,7 +22,7 @@ resource "google_logging_project_sink" "sinks" {
   project = local.project
 
   filter      = each.value ? "logName=projects/${local.project}/logs/${lower(each.value)}-${local.env}" : var.filter
-  destination = each.value ? "storage.googleapis.com/${local.env}-${local.region}-${lower(each.value)}" : var.destination_uri
+  destination = "storage.googleapis.com/${local.env}-${local.region}-${lower(each.value)}"
 
   unique_writer_identity = var.unique_writer_identity
 }

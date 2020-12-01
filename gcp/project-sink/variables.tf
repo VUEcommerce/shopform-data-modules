@@ -1,8 +1,3 @@
-variable "destination_uri" {
-  description = "The self_link URI of the destination resource (This is available as an output coming from one of the destination submodules)"
-  type        = string
-}
-
 variable "filter" {
   description = "The filter to apply when exporting logs. Only log entries that match the filter are exported. Default is '' which exports all logs."
   type        = string
