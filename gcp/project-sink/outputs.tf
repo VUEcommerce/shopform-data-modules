@@ -15,6 +15,6 @@ output "log_sink_filters" {
 output "log_sink_destination" {
   description = "The destination of the log sinks that were created."
   value = { for destination, sink in google_logging_project_sink.sinks :
-    name => sink.destination
+    destination => sink.destination
   }
 }

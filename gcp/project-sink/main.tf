@@ -4,7 +4,7 @@
 locals {
   # For multi sinks
   names_set  = toset(var.names)
-  sinks_list = [for name in var.names : google_logging_project_sink.sink[name]]
+  sinks_list = [for name in var.names : google_logging_project_sink.sinks[name]]
 
   env     = var.environment
   project = var.project_code
